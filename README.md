@@ -1,4 +1,18 @@
-# The `mcmthesis` Class
+# 美国数学建模 LaTeX 模板
+
+不少用户直接 clone 或者下载我们的库文件, 使用之前请认真阅读说明文档 mcmthesis.pdf 内容. 
+
+一, 如果你要获取示例代码, 请执行 `xetex mcmthesis.dtx` 自动解包出来代码.
+
+二, 如果你想直接获取例子代码. 可以到 [release页面](https://github.com/latexstudio-org/mcmthesis/releases) 获取 mcmthesis-demo.zip 文件即可.
+
+
+针对美国建模, 这里做了视频说明: [2020 美国数学建模 LaTeX 模板更新说明](https://www.bilibili.com/video/av85259525)
+
+
+我们整理了学习资料包, 关注如下公众号回复:　**建模2020**  即可获取. 
+
+<img src="https://github.com/latexstudio/CUMCMThesis/blob/master/figures/gongzhonghao2.png" alt="" width="350px">
 
 This class is designed for the MCM/ICM.
 
@@ -40,5 +54,5 @@ If you are interested in the process of development you may observe
 
 <https://github.com/latexstudio-org/mcmthesis>
 
-[zhaoli]: http://www.latexstudio.net/
+[latexstudio]: http://www.latexstudio.net/
 [liam-ctan]: http://www.ctan.org/author/huang-l
