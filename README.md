@@ -12,7 +12,7 @@
 
 我们整理了学习资料包, 关注如下公众号回复:　**建模2020**  即可获取. 
 
-<img src="https://github.com/latexstudio/CUMCMThesis/blob/master/figures/gongzhonghao2.png" alt="" width="350px">
+<img src="https://pics.latexstudio.net/wp-content/themes/dux/img/gongzhonghao5.jpg" alt="" width="350px">
 
 This class is designed for the MCM/ICM.
 
