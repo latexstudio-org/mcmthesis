@@ -104,7 +104,7 @@ and the derived files             \jobname.cls,
 %</internal>
 %<*driver>
 \ProvidesFile{mcmthesis.dtx}
-  [2020/01/22 v6.3 The Thesis Template Designed For MCM/ICM]
+  [2021/01/05 v6.3.1 The Thesis Template Designed For MCM/ICM]
 \documentclass{ltxdoc}
 \EnableCrossrefs
 \CodelineIndex
@@ -146,7 +146,7 @@ and the derived files             \jobname.cls,
 %</driver>
 % \fi
 %
-% \CheckSum{529}
+% \CheckSum{530}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -164,7 +164,7 @@ and the derived files             \jobname.cls,
 %   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %   Right brace   \}     Tilde         \~}
 %
-% \changes{v6.3}{2020/01/22}{首次公开。}
+% \changes{v6.3.1}{2021/01/05}{更新版面尺寸，细节格式。}
 %
 % \GetFileInfo{\jobname.dtx}
 %
@@ -177,7 +177,7 @@ and the derived files             \jobname.cls,
 %   \makebox[0pt][l]{\hspace{1.5cm}\hyperlink{English}%
 %     {\large$ \to $ English Version}}
 % }
-% \author{\LaTeX Studio \\ \texttt{latexstudio.net}\and 黄晨成 \\ \texttt{liamhuang0205+\jobname@gmail.com}}
+% \author{\LaTeX Studio \\ \texttt{latexstudio@qq.com}\and 黄晨成 \\ \texttt{liamhuang0205+\jobname@gmail.com}}
 % \date{\filedate}
 %
 % \maketitle
@@ -361,8 +361,8 @@ xelatex mcmthesis-demo.tex
 %
 % 模板支持多种编译方式：
 % \begin{itemize}
-%   \item \XeLaTeX \textbf{这是推荐的方式}；
-%   \item pdf\LaTeX；
+%   \item \XeLaTeX （若含中文）；
+%   \item pdf\LaTeX \textbf{这是推荐的方式}；
 %   \item \LaTeX{} + DVIPDFMx。
 % \end{itemize}
 %
@@ -398,6 +398,7 @@ xelatex mcmthesis-demo.tex
 %   \item [6.2] 可定制的 headset。
 %   \item [6.2.1] 将默认字号由 |11pt| 修改为 |12pt|。
 %   \item [6.3] 修改summary的版面样式。
+%   \item [6.3.1] 将默认的版面尺寸由 |a4paper| 修改为 |letterpaper|。
 % \end{description}
 %
 % \title{\hypertarget{English}{%
@@ -609,8 +610,8 @@ xelatex mcmthesis-demo.tex
 %
 % The template supports various kinds of compilation workflow:
 % \begin{itemize}
-%   \item \XeLaTeX\ (\textbf{recommend})；
-%   \item pdf\LaTeX；
+%   \item \XeLaTeX (If with chinese and so on)；
+%   \item pdf\LaTeX\ (\textbf{recommend})；
 %   \item \LaTeX{} + DVIPDFMx。
 % \end{itemize}
 %
@@ -633,6 +634,7 @@ xelatex mcmthesis-demo.tex
 %   \item [6.2] Making headset of the Summary Sheet modifible.
 %   \item [6.2.1] Change default fontsize, from |11pt| to |12pt|.
 %   \item [6.3] Change summary sheet layout and demo code.
+%   \item [6.3.1] Change the default papersize, frome |a4paper| to |letterpaper|.
 % \end{description}
 %
 % \StopEventually{}
@@ -642,9 +644,9 @@ xelatex mcmthesis-demo.tex
 %<*class>
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{mcmthesis}
-  [2020/01/18 v6.3 The Thesis Template Designed For MCM/ICM]
+  [2021/01/05 v6.3.1 The Thesis Template Designed For MCM/ICM]
 \typeout{The Thesis Template Designed For MCM/ICM}
-\def\MCMversion{v6.3}
+\def\MCMversion{v6.3.1}
 %    \end{macrocode}
 % \subsection{Options}
 %
@@ -695,7 +697,7 @@ xelatex mcmthesis-demo.tex
 %
 % Loading document class.
 %    \begin{macrocode}
-\LoadClass[a4paper, 12pt]{article}
+\LoadClass[letterpaper, 12pt]{article}
 %    \end{macrocode}
 %
 % User interface.
@@ -759,7 +761,7 @@ xelatex mcmthesis-demo.tex
 % \subsection{Page Layout}
 % Setting paper size and margin sep.
 %    \begin{macrocode}
-\geometry{a4paper, margin = 1in}
+\geometry{letterpaper, margin = 1in}
 %    \end{macrocode}
 %
 % Making the footer and header.
@@ -908,22 +910,22 @@ xelatex mcmthesis-demo.tex
   \begingroup
   \setlength{\parindent}{0pt}
      \begin{minipage}[t]{0.33\linewidth}
-     \bfseries\centering%
-      Problem Chosen\\[0.7pc]
-      {\Huge\textbf{\MCM@opt@problem}}\\[2.8pc]
+      \centering%
+      \textbf{Problem Chosen}\\[0.7pc]
+      {\fontsize{20pt}{\baselineskip}\selectfont{\MCM@opt@problem}}\\[2.8pc]
      \end{minipage}%
      \begin{minipage}[t]{0.33\linewidth}
       \centering%
       \textbf{\headset}%
      \end{minipage}%
      \begin{minipage}[t]{0.33\linewidth}
-      \centering\bfseries%
-       Team Control Number\\[0.7pc]
-      {\Huge\textbf{\MCM@opt@tcn}}\\[2.8pc]
+      \centering%
+      \textbf{Team Control Number}\\[0.7pc]
+      {\fontsize{20pt}{\baselineskip}\selectfont{\MCM@opt@tcn}}\\[2.8pc]
      \end{minipage}\par
-  \rule{\linewidth}{0.8pt}\par
+  \rule{\linewidth}{1.5pt} 
   \endgroup
-  \vskip 10pt%
+  \vskip 5pt%
   \ifMCM@opt@titleinsheet
     \normalfont \LARGE \@title \par
   \fi
@@ -1119,12 +1121,22 @@ xelatex mcmthesis-demo.tex
 \usepackage{newtxtext}%\usepackage{palatino}
 \usepackage{lipsum}
 \title{The \LaTeX{} Template for MCM Version \MCMversion}
-\author{\small \href{http://www.latexstudio.net/}
+\author{\small \href{https://www.latexstudio.net/}
   {\includegraphics[width=7cm]{mcmthesis-logo}}}
 \date{\today}
 \begin{document}
 \begin{abstract}
-\lipsum[1]
+Use this template to begin typing the first page (summary page) of your electronic report. This template uses a 12-point Times New Roman font. Submit your paper as an Adobe PDF electronic file (e.g. 1111111.pdf), typed in English, with a readable font of at least 12-point type.
+
+Do not include the name of your school, advisor, or team members on this or any page.
+
+Papers must be within the 25 page limit.
+
+Be sure to change the control number and problem choice above.
+You may delete these instructions as you begin to type your report here. 
+
+Follow us @COMAPMath on Twitter or COMAPCHINAOFFICIAL on Weibo for the most up to date contest information.
+
 \begin{keywords}
 keyword1; keyword2
 \end{keywords}
@@ -1155,8 +1167,7 @@ and commercial implementations. \LaTeX\ can be used for any kind
 of document, but it is especially suited to those with complex
 structures, repetitive formatting, or notations like
 mathematics. Install the software from
-\url{www.tug.org/texlive/} or \url{https://www.latexstudio.net/archives/texsoftware}
-.
+\url{www.tug.org/texlive/}.
 \subsection{Creating and typesetting your document}
 
 \subsection{Syntax (how to type \LaTeX\ commands --- these
@@ -1270,8 +1281,7 @@ Mathematical Society and Addison-Wesley
 Publishing Company , 1984-1986.
 \bibitem{2}Lamport, Leslie,  \LaTeX{}: `` A Document Preparation System '',
 Addison-Wesley Publishing Company, 1986.
-\bibitem{3}\url{http://www.latexstudio.net/}
-\bibitem{4}\url{http://www.chinatex.org/}
+\bibitem{3}\url{https://www.latexstudio.net/} 
 \end{thebibliography}
 
 \begin{appendices}
