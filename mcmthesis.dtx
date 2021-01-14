@@ -833,9 +833,9 @@ xelatex mcmthesis-demo.tex
     \MCM@maketitle
   \fi
   \newpage
-  \let\thepage\saved@thepage
-  \setcounter{page}{1}
-  \pagestyle{fancy}
+  %\let\thepage\saved@thepage
+  %\setcounter{page}{1}
+  %\pagestyle{fancy}
 }
 %    \end{macrocode}
 %
@@ -903,7 +903,7 @@ xelatex mcmthesis-demo.tex
 %    \begin{macrocode}
 \newcommand{\problem}[1]{\mcmsetup{problem = #1}}
 \def\makesheet{%
-  \pagestyle{empty}%
+  \thispagestyle{empty}%
   \null%
   \vspace*{-5pc}%
   \begin{center}
@@ -941,8 +941,11 @@ xelatex mcmthesis-demo.tex
 % Defining the \cs{MCM@maketitle}
 %    \begin{macrocode}
 \newcommand{\MCM@maketitle}{%
+\let\thepage\saved@thepage
+  \setcounter{page}{1}
   \begin{center}%
-  \let \footnote \thanks
+  \let \footnote \thanks%
+  \pagestyle{fancy}%
     {\LARGE \@title \par}%
     \vskip 1.5em%
     {\large
@@ -983,7 +986,7 @@ xelatex mcmthesis-demo.tex
 % Now, we could define the |memo| environment.
 %    \begin{macrocode}
 \newenvironment{memo}[1][Memorandum]{%
-  \pagestyle{plain}%
+  \pagestyle{fancy}%
   \ifthenelse{\equal{\MCM@memologo}{\relax}}{%
     % without logo specified.
   }{%
