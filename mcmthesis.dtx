@@ -823,19 +823,18 @@ xelatex mcmthesis-demo.tex
 % sheet and titlepage should be printed.
 %    \begin{macrocode}
 \def\maketitle{%
-  \let\saved@thepage\thepage
-  \let\thepage\relax
+  %\let\saved@thepage\thepage
+  %\let\thepage\relax
   \ifMCM@opt@sheet
   \makesheet
   \fi
   \newpage
+  \setcounter{page}{1}
+  \pagestyle{fancy}
   \ifMCM@opt@titlepage
     \MCM@maketitle
   \fi
   \newpage
-  %\let\thepage\saved@thepage
-  %\setcounter{page}{1}
-  %\pagestyle{fancy}
 }
 %    \end{macrocode}
 %
@@ -941,8 +940,8 @@ xelatex mcmthesis-demo.tex
 % Defining the \cs{MCM@maketitle}
 %    \begin{macrocode}
 \newcommand{\MCM@maketitle}{%
-\let\thepage\saved@thepage
-  \setcounter{page}{1}
+  %\let\thepage\saved@thepage
+  %\setcounter{page}{1}
   \begin{center}%
   \let \footnote \thanks%
   \pagestyle{fancy}%
