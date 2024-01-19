@@ -104,15 +104,14 @@ and the derived files             \jobname.cls,
 %</internal>
 %<*driver>
 \ProvidesFile{mcmthesis.dtx}
-  [2021/01/05 v6.3.1 The Thesis Template Designed For MCM/ICM]
+  [2024/01/15 v6.3.2 The Thesis Template Designed For MCM/ICM]
 \documentclass{ltxdoc}
 \EnableCrossrefs
 \CodelineIndex
 \RecordChanges
-\usepackage[UTF8, fntef, hyperref]{ctexcap}
+\usepackage[UTF8, fntef]{ctexcap}
 \usepackage{hologo}
-\usepackage{xcolor}
-\usepackage{tabu}
+\usepackage{xcolor} 
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{listings}
@@ -140,6 +139,7 @@ and the derived files             \jobname.cls,
 \newcommand{\file}[1]{\textsf{#1}}
 \newcommand{\path}[1]{\textsf{#1}}
 \newcommand{\mopt}{\textsf}
+\usepackage{hyperref}
 \begin{document}
   \DocInput{\jobname.dtx}
 \end{document}
@@ -164,7 +164,7 @@ and the derived files             \jobname.cls,
 %   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %   Right brace   \}     Tilde         \~}
 %
-% \changes{v6.3.1}{2021/01/05}{更新版面尺寸，细节格式。}
+% \changes{v6.3.2}{2024/01/19}{更新版面尺寸，细节格式。}
 %
 % \GetFileInfo{\jobname.dtx}
 %
@@ -189,7 +189,7 @@ and the derived files             \jobname.cls,
 %
 % \section{模板介绍}
 %
-% 这份模板最早由王昭礼设计，并在往年参赛者的建议下不断改进。2014 年年初，黄晨成接手模板，
+% 这份模板最早由latexstudio设计，并在往年参赛者的建议下不断改进。2014 年年初，黄晨成接手模板，
 % 用 key-value 语法重构了文档选项，并修复了一些 bug。2015 年年初，黄晨成将模板使用
 % \pkg{DocStrip} 的语法重构，并上传至 CTAN。
 %
@@ -242,7 +242,7 @@ xelatex mcmthesis-demo.tex
 % \subsection{依赖}
 % \pkg{mcmthesis} 依赖于以下宏包，这些宏包在常见的 \TeX{} 发行版中都已包含，
 % 在安装使用之前，请确认你的 \TeX{} 发行版中正确安装了这些宏包。
-% \begin{longtabu}{cccc}
+% \begin{longtable}{cccc}
 %   \toprule
 %   \pkg{xkeyval} & \pkg{etoolbox} & \pkg{fancyhdr} & \pkg{fancybox} \\
 %   \pkg{ifthen} & \pkg{lastpage} & \pkg{listings} & \pkg{appendix} \\
@@ -257,7 +257,7 @@ xelatex mcmthesis-demo.tex
 %   \pkg{graphicx} & \pkg{epstopdf} & \pkg{bmpsize} & \pkg{xcolor}\\
 %   \pkg{longtable} & \pkg{tabu} & \pkg{hologo} & \pkg{palatino}\\
 %   \bottomrule
-% \end{longtabu}
+% \end{longtable}
 % 如果你尚未安装这些宏包，可以启动你的 \TeX{} 发行版的宏包管理器
 % 来安装；或者到 \url{http://www.ctan.org} 上搜索下载并安装。
 %
@@ -399,6 +399,7 @@ xelatex mcmthesis-demo.tex
 %   \item [6.2.1] 将默认字号由 |11pt| 修改为 |12pt|。
 %   \item [6.3] 修改summary的版面样式。
 %   \item [6.3.1] 将默认的版面尺寸由 |a4paper| 修改为 |letterpaper|。
+%   \item [6.3.2] 修复了一些版式异常。
 % \end{description}
 %
 % \title{\hypertarget{English}{%
@@ -420,7 +421,7 @@ xelatex mcmthesis-demo.tex
 %
 % \section{Introduction}
 %
-% This template was designed by Zhaoli Wang first, and was improved by him
+% This template was designed by latexstudio first, and was improved by him
 % following the suggestions from contest takers. In the beginning of the year
 % 2014, Liam Huang redesigned it, by using key-value syntax, and fixed known
 % bugs. Liam reimplemented it at the begining of the year 2015,
@@ -481,7 +482,7 @@ xelatex mcmthesis-demo.tex
 % These packages has been installed in common \TeX{} distribution.
 % Before installation, please make sure that you have installed these
 % packages correctly.
-% \begin{longtabu}{cccc}
+% \begin{longtable}{cccc}
 %   \toprule
 %   \pkg{xkeyval} & \pkg{etoolbox} & \pkg{fancyhdr} & \pkg{fancybox} \\
 %   \pkg{ifthen} & \pkg{lastpage} & \pkg{listings} & \pkg{appendix} \\
@@ -496,7 +497,7 @@ xelatex mcmthesis-demo.tex
 %   \pkg{graphicx} & \pkg{epstopdf} & \pkg{bmpsize} & \pkg{xcolor}\\
 %   \pkg{longtable} & \pkg{tabu} & \pkg{hologo} & \pkg{palatino}\\
 %   \bottomrule
-% \end{longtabu}
+% \end{longtable}
 % If you haven't install these packages, you could execute the package
 % manager of your distribution and install them; you could also download
 % them from \url{http://www.ctan.org}.
@@ -635,6 +636,7 @@ xelatex mcmthesis-demo.tex
 %   \item [6.2.1] Change default fontsize, from |11pt| to |12pt|.
 %   \item [6.3] Change summary sheet layout and demo code.
 %   \item [6.3.1] Change the default papersize, frome |a4paper| to |letterpaper|.
+%   \item [6.3.2] fixed some bugs.
 % \end{description}
 %
 % \StopEventually{}
@@ -644,9 +646,9 @@ xelatex mcmthesis-demo.tex
 %<*class>
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{mcmthesis}
-  [2021/01/05 v6.3.1 The Thesis Template Designed For MCM/ICM]
+  [2024/01/19 v6.3.2 The Thesis Template Designed For MCM/ICM]
 \typeout{The Thesis Template Designed For MCM/ICM}
-\def\MCMversion{v6.3.1}
+\def\MCMversion{v6.3.2}
 %    \end{macrocode}
 % \subsection{Options}
 %
@@ -911,7 +913,7 @@ xelatex mcmthesis-demo.tex
      \begin{minipage}[t]{0.33\linewidth}
       \centering%
       \textbf{Problem Chosen}\\[0.7pc]
-      {\fontsize{20pt}{\baselineskip}\selectfont{\MCM@opt@problem}}\\[2.8pc]
+      {\Large\textcolor{red}{\MCM@opt@problem}}\\[2.8pc]
      \end{minipage}%
      \begin{minipage}[t]{0.33\linewidth}
       \centering%
@@ -920,7 +922,7 @@ xelatex mcmthesis-demo.tex
      \begin{minipage}[t]{0.33\linewidth}
       \centering%
       \textbf{Team Control Number}\\[0.7pc]
-      {\fontsize{20pt}{\baselineskip}\selectfont{\MCM@opt@tcn}}\\[2.8pc]
+      {\Large\textcolor{red}{\MCM@opt@tcn}}\\[2.8pc]
      \end{minipage}\par
   \rule{\linewidth}{1.5pt} 
   \endgroup

@@ -10,7 +10,7 @@
 针对美国建模, 这里做了视频说明: [2020 美国数学建模 LaTeX 模板更新说明](https://www.bilibili.com/video/av85259525)
 
 
-我们整理了学习资料包, 关注如下公众号回复:　**建模2020**  即可获取. 
+关注我们的公众号，学习 LaTeX 无烦恼！
 
 <img src="https://pics.latexstudio.net/wp-content/themes/dux/img/gongzhonghao5.jpg" alt="" width="350px">
 
