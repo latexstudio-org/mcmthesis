@@ -3,7 +3,7 @@
 % This is file `mcmthesis.dtx'.
 %
 % Copyright (C)
-%     2010 -- 2015 by Zhaoli Wang
+%     2010 -- 2015 by latexstudio
 %     2014 -- 2019 by Liam Huang
 %     2019 -- present by latexstudio.net
 % -----------------------------------
@@ -36,7 +36,7 @@
 This is a generated file.
 
 Copyright (C)
-      2010 -- 2015 by Zhaoli Wang
+      2010 -- 2015 by latexstudio
       2014 -- 2019 by Liam Huang
       2019 -- present by latexstudio.net
 
@@ -189,7 +189,7 @@ and the derived files             \jobname.cls,
 %
 % \section{模板介绍}
 %
-% 这份模板最早由latexstudio设计，并在往年参赛者的建议下不断改进。2014 年年初，黄晨成接手模板，
+% 这份模板最早由 latexstudio 设计，并在往年参赛者的建议下不断改进。2014 年年初，黄晨成接手模板，
 % 用 key-value 语法重构了文档选项，并修复了一些 bug。2015 年年初，黄晨成将模板使用
 % \pkg{DocStrip} 的语法重构，并上传至 CTAN。
 %
@@ -280,6 +280,7 @@ xelatex mcmthesis-demo.tex
 % \fi
 \begin{lstlisting}[language={[LaTeX]TeX}]
 \documentclass{mcmthesis}
+%\documentclass[CTeX = true]{mcmthesis}  % 当使用 CTeX 套装时使用该行设置
 \mcmsetup{tcn = 12345, problem = B, titlepage = false}
 \end{lstlisting}
 % \iffalse
@@ -399,7 +400,7 @@ xelatex mcmthesis-demo.tex
 %   \item [6.2.1] 将默认字号由 |11pt| 修改为 |12pt|。
 %   \item [6.3] 修改summary的版面样式。
 %   \item [6.3.1] 将默认的版面尺寸由 |a4paper| 修改为 |letterpaper|。
-%   \item [6.3.2] 修复了一些版式异常。
+%   \item [6.3.2] 修复了一些版式异常和兼容性问题。
 % \end{description}
 %
 % \title{\hypertarget{English}{%
@@ -520,7 +521,7 @@ xelatex mcmthesis-demo.tex
 %<*internal>
 % \fi
 \begin{lstlisting}[language={[LaTeX]TeX}]
-\documentclass{mcmthesis}
+\documentclass{mcmthesis} 
 \mcmsetup{tcn = 12345, problem = B, titlepage = false}
 \end{lstlisting}
 % \iffalse
@@ -636,7 +637,7 @@ xelatex mcmthesis-demo.tex
 %   \item [6.2.1] Change default fontsize, from |11pt| to |12pt|.
 %   \item [6.3] Change summary sheet layout and demo code.
 %   \item [6.3.1] Change the default papersize, frome |a4paper| to |letterpaper|.
-%   \item [6.3.2] fixed some bugs.
+%   \item [6.3.2] fixed some bugs and ctex compatibility.
 % \end{description}
 %
 % \StopEventually{}
@@ -1101,7 +1102,7 @@ xelatex mcmthesis-demo.tex
 %% This is a generated file.
 %%
 %% Copyright (C)
-%%       2010 -- 2015 by Zhaoli Wang
+%%       2010 -- 2015 by latexstudio
 %%       2014 -- 2019 by Liam Huang
 %%       2019 -- present by latexstudio.net
 %%
@@ -1115,14 +1116,20 @@ xelatex mcmthesis-demo.tex
 %%
 %% This work has the LPPL maintenance status `maintained'.
 %%
-%% The Current Maintainer of this work is Liam Huang.
+%% The Current Maintainer of this work is latexstudio.net.
 %%
 \documentclass{mcmthesis}
-\mcmsetup{CTeX = false,   % 使用 CTeX 套装时，设置为 true
+ %\documentclass[CTeX = true]{mcmthesis}  % 当使用 CTeX 套装时请注释上一行使用该行的设置
+\mcmsetup{
         tcn = 0000, problem = A,
         sheet = true, titleinsheet = true, keywordsinsheet = true,
-        titlepage = true, abstract = true}
-\usepackage{newtxtext}%\usepackage{palatino}
+        titlepage = false, abstract = true}
+
+ %三款字体可以选择
+\usepackage{times}
+ %\usepackage{newtxtext}
+ %\usepackage{palatino}
+
 \usepackage{lipsum}
 \title{The \LaTeX{} Template for MCM Version \MCMversion}
 \author{\small \href{https://www.latexstudio.net/}

@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : Sudoku.cpp
-// Author      : wzlf11
+// Author      : lst
 // Version     : a.0
 // Copyright   : Your copyright notice
 // Description : Sudoku in C++.
