@@ -12,7 +12,13 @@
 
 关注我们的公众号，学习 LaTeX 无烦恼！
 
-<img src="https://pics.latexstudio.net/wp-content/themes/dux/img/gongzhonghao5.jpg" alt="" width="350px">
+<img src="https://pics.latexstudio.net/uploads/20231225/a25d906a1b8d983fb7d4e8caefda70b4.png" alt="" width="350px">
+
+
+针对 24 年建模，我们建立了 QQ 模版交流群，大家可以入群交流：
+
+<img src="https://pics.latexstudio.net/uploads/20240120/6106ee036ebe2dd8d811407343945715.png" alt="" width="350px">
+
 
 This class is designed for the MCM/ICM.
 
