@@ -1,9 +1,7 @@
 % \iffalse meta-comment
-%
 % This is file `mcmthesis.dtx'.
 %
-% Copyright (C)
-%     2010 -- 2015 by latexstudio
+% Copyright (C) 2010 -- 2015 by latexstudio
 %     2014 -- 2019 by Liam Huang
 %     2019 -- present by latexstudio.net
 % -----------------------------------
@@ -17,7 +15,7 @@
 %
 % This work has the LPPL maintenance status `maintained'.
 %
-% The Current Maintainer of this work is Liam Huang.
+% The Current Maintainer of this work is LaTeXStudio.
 %
 %<*internal>
 \begingroup
@@ -32,11 +30,9 @@
 \preamble
 
 -----------------------------------
-
 This is a generated file.
 
-Copyright (C)
-      2010 -- 2015 by latexstudio
+Copyright (C) 2010 -- 2015 by latexstudio
       2014 -- 2019 by Liam Huang
       2019 -- present by latexstudio.net
 
@@ -47,8 +43,6 @@ The latest version of this license is in
   http://www.latex-project.org/lppl.txt
 and version 1.3 or later is part of all distributions of LaTeX
 version 2005/12/01 or later.
-
-This work has the LPPL maintenance status `maintained'.
 
 The Current Maintainer of this work is latexstudio.net.
 
@@ -104,16 +98,17 @@ and the derived files             \jobname.cls,
 %</internal>
 %<*driver>
 \ProvidesFile{mcmthesis.dtx}
-  [2024/01/15 v6.3.2 The Thesis Template Designed For MCM/ICM]
+  [2024/01/22 v6.3.3 The Thesis Template Designed For MCM/ICM]
 \documentclass{ltxdoc}
 \EnableCrossrefs
 \CodelineIndex
 \RecordChanges
-\usepackage[UTF8, fntef]{ctexcap}
+\usepackage[UTF8, fontset=fandol,fntef]{ctexcap}
 \usepackage{hologo}
 \usepackage{xcolor} 
 \usepackage{longtable}
 \usepackage{booktabs}
+\usepackage{graphicx}
 \usepackage{listings}
 \usepackage{multirow}
 \usepackage{amsmath}
@@ -122,13 +117,13 @@ and the derived files             \jobname.cls,
 \definecolor{darkblue}{rgb}{0,0,0.3}
 \lstset{
   language=[LaTeX]TeX,
-% style
+  % style
   frame=lines,%
   basicstyle={\footnotesize\ttfamily},%
   keywordstyle=\color{darkblue}\bfseries,%
   identifierstyle=,%
   commentstyle=\color{darkgreen},%\itshape,%
-  stringstyle=\color{black}%
+  stringstyle=\color{black},%
 }
 \AtBeginDocument{\hypersetup{colorlinks=true}}
 \newcommand{\pkg}[1]{\textsf{#1}}
@@ -146,7 +141,7 @@ and the derived files             \jobname.cls,
 %</driver>
 % \fi
 %
-% \CheckSum{530}
+% \CheckSum{673}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -164,7 +159,7 @@ and the derived files             \jobname.cls,
 %   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %   Right brace   \}     Tilde         \~}
 %
-% \changes{v6.3.2}{2024/01/19}{更新版面尺寸，细节格式。}
+% \changes{v6.3.3}{2024/01/22}{修改几个样式错误，增加了生成式 AI 引用样式。}
 %
 % \GetFileInfo{\jobname.dtx}
 %
@@ -193,14 +188,16 @@ and the derived files             \jobname.cls,
 % 用 key-value 语法重构了文档选项，并修复了一些 bug。2015 年年初，黄晨成将模板使用
 % \pkg{DocStrip} 的语法重构，并上传至 CTAN。
 %
-% 详细的使用说明，可以参考\href{https://liam.page/2016/01/27/how-to-use-mcmthesis/}{这里}。我们也会持续维护更新在这里，
-% 大家可以到这里下载 \url{https://www.latexstudio.net}。
 %
+%
+% 欢迎大家关注我们的微信公众号，更多更好的 \LaTeX{} 资料资讯：
+%
+% \centerline{\includegraphics[width=3.5cm]{./figures/qrcodewechat}}
 % \section{手工安装说明}
 %
 % \subsection{下载}
 %
-% 你可以到项目主页下载模板的最新版本。除去项目主页之外，不再维护任何镜像。
+% 你可以到项目主页下载最新版。如下是几个更新地址：
 %
 % \begin{description}
 %   \item [CTAN] \url{http://www.ctan.org/pkg/mcmthesis}
@@ -291,6 +288,7 @@ xelatex mcmthesis-demo.tex
 % 当前，\pkg{mcmthesis} 有八个选项：
 % \begin{description}
 %   \item [CTeX] 兼容选项，默认关闭。当使用 2.9.2.164 版本的 CTeX 套装时请打开。
+%   \item [tstyle] 可以根据自己需要修改队号和题号的字体和颜色。  
 %   \item [tcn] 队伍控制号码，接受一个字符串作为值；输入的值将显示在摘要页上和
 %     每一页的页眉上；默认为 \texttt{0000}。
 %   \item [problem] 选题，接受一个字符串作为值；输入的值将显示在摘要页上；
@@ -401,6 +399,7 @@ xelatex mcmthesis-demo.tex
 %   \item [6.3] 修改summary的版面样式。
 %   \item [6.3.1] 将默认的版面尺寸由 |a4paper| 修改为 |letterpaper|。
 %   \item [6.3.2] 修复了一些版式异常和兼容性问题。
+%   \item [6.3.3] 修改几个样式错误，增加了生成式 AI 引用样式。
 % \end{description}
 %
 % \title{\hypertarget{English}{%
@@ -531,6 +530,7 @@ xelatex mcmthesis-demo.tex
 %
 % \pkg{mcmthesis} has seven options.
 % \begin{description}
+%   \item [tstyle]  change the text color of the team control number and problem no.
 %   \item [tcn] The team control number, recieves a string as value;
 %     this value will be displayed on summary sheet and every page's header.
 %     The default value is \texttt{0000}.
@@ -638,6 +638,7 @@ xelatex mcmthesis-demo.tex
 %   \item [6.3] Change summary sheet layout and demo code.
 %   \item [6.3.1] Change the default papersize, frome |a4paper| to |letterpaper|.
 %   \item [6.3.2] fixed some bugs and ctex compatibility.
+%   \item [6.3.3] Fixed several styling errors and added the reference style for the generative AI.
 % \end{description}
 %
 % \StopEventually{}
@@ -647,9 +648,9 @@ xelatex mcmthesis-demo.tex
 %<*class>
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{mcmthesis}
-  [2024/01/19 v6.3.2 The Thesis Template Designed For MCM/ICM]
+  [2024/01/22 v6.3.3 The Thesis Template Designed For MCM/ICM]
 \typeout{The Thesis Template Designed For MCM/ICM}
-\def\MCMversion{v6.3.2}
+\def\MCMversion{v6.3.3}
 %    \end{macrocode}
 % \subsection{Options}
 %
@@ -667,13 +668,16 @@ xelatex mcmthesis-demo.tex
 \define@boolkey{MCM}[MCM@opt@]{sheet}[true]{}
 \define@boolkey{MCM}[MCM@opt@]{titleinsheet}[false]{}
 \define@boolkey{MCM}[MCM@opt@]{keywordsinsheet}[false]{}
-\define@cmdkeys{MCM}[MCM@opt@]{tcn,problem}
+\define@cmdkeys{MCM}[MCM@opt@]{tcn,problem,tstyle}
 \define@key{MCM}{tcn}[0000]{\gdef\MCM@opt@tcn{#1}}
 \define@key{MCM}{problem}[A]{\gdef\MCM@opt@problem{#1}}
-\setkeys{MCM}{tcn=0000,problem=B}
+\define@key{MCM}{tstyle}[A]{\gdef\MCM@opt@tstyle{#1}}
+\setkeys{MCM}{tcn=0000,problem=B,tstyle=\color{red}\bfseries}
 
 \define@key{mcmthesis.cls}{tcn}[0000]{\gdef\MCM@opt@tcn{#1}}
 \define@key{mcmthesis.cls}{problem}[A]{\gdef\MCM@opt@problem{#1}}
+\define@key{mcmthesis.cls}{tstyle}[A]{\gdef\MCM@opt@tstyle{#1}}
+\define@boolkey{mcmthesis.cls}[MCM@opt@]{CTeX}{}
 \define@boolkey{mcmthesis.cls}[MCM@opt@]{titlepage}{}
 \define@boolkey{mcmthesis.cls}[MCM@opt@]{abstract}{}
 \define@boolkey{mcmthesis.cls}[MCM@opt@]{sheet}{}
@@ -711,7 +715,7 @@ xelatex mcmthesis-demo.tex
 %    \begin{macrocode}
 \RequirePackage{fancyhdr, fancybox}
 \RequirePackage{ifthen}
-\RequirePackage{lastpage}
+% \RequirePackage{lastpage}
 \RequirePackage{listings}
 \RequirePackage[toc, page, title, titletoc, header]{appendix}
 \RequirePackage{paralist}
@@ -769,10 +773,18 @@ xelatex mcmthesis-demo.tex
 %
 % Making the footer and header.
 %    \begin{macrocode}
-\pagestyle{fancy}
+\fancypagestyle{main}{
 \fancyhf{}
 \lhead{\small\sffamily \team}
 \rhead{\small\sffamily Page \thepage\ of \pageref{LastPage}}
+}
+\pagestyle{main}
+
+\fancypagestyle{aimain}{
+\fancyhf{}
+\lhead{\small\sffamily \team}
+\rhead{\small\sffamily Page \thepage }
+}
 %    \end{macrocode}
 %
 % Setting \cs{parskip}.
@@ -848,19 +860,19 @@ xelatex mcmthesis-demo.tex
   \newbox\@abstract%
   \setbox\@abstract\hbox{}%
   \long\def\abstract{\bgroup\global\setbox\@abstract\vbox\bgroup\hsize\textwidth\leftskip1cm\rightskip1cm}%
-  \def\endabstract{\egroup\egroup}
+  \def\endabstract{\egroup\egroup}%
   \def\make@abstract{%
-    \begin{center}
-      \textbf{\abstractname}
-    \end{center}
+    \begin{center}%
+      \textbf{\abstractname}%
+    \end{center}%
     \usebox\@abstract\par
   }
 \else
   \RenewEnviron{abstract}{\xdef\@abstract{\expandonce\BODY}}
   \def\make@abstract{%
-    \begin{center}
-      \textbf{\abstractname}
-    \end{center}
+    \begin{center}%
+      \textbf{\abstractname}%
+    \end{center}%
     \@abstract\par
   }
 \fi
@@ -914,7 +926,7 @@ xelatex mcmthesis-demo.tex
      \begin{minipage}[t]{0.33\linewidth}
       \centering%
       \textbf{Problem Chosen}\\[0.7pc]
-      {\Large\textcolor{red}{\MCM@opt@problem}}\\[2.8pc]
+      {\Large \MCM@opt@tstyle {\MCM@opt@problem}}\\[2.8pc]
      \end{minipage}%
      \begin{minipage}[t]{0.33\linewidth}
       \centering%
@@ -923,7 +935,7 @@ xelatex mcmthesis-demo.tex
      \begin{minipage}[t]{0.33\linewidth}
       \centering%
       \textbf{Team Control Number}\\[0.7pc]
-      {\Large\textcolor{red}{\MCM@opt@tcn}}\\[2.8pc]
+      {\Large\MCM@opt@tstyle{\MCM@opt@tcn}}\\[2.8pc]
      \end{minipage}\par
   \rule{\linewidth}{1.5pt} 
   \endgroup
@@ -967,7 +979,7 @@ xelatex mcmthesis-demo.tex
 }
 %    \end{macrocode}
 %
-% \changes{6.2.2}{2019/01/26}{新增 memo 环境}
+% \changes{6.3.3}{2024/01/22}{新增生成式AI引用样式}
 % \subsection{the memo environment}
 % Defining macros to store information here.
 %    \begin{macrocode}
@@ -995,7 +1007,7 @@ xelatex mcmthesis-demo.tex
     % with logo specified
     \begin{minipage}[t]{\columnwidth}%
       \begin{flushright}
-        \vspace{-0.6in}
+        \vspace{-0.2in}
         \MCM@memologo
         \vspace{0.5in}
       \par\end{flushright}%
@@ -1078,9 +1090,59 @@ xelatex mcmthesis-demo.tex
     keywordstyle=\color{darkblue}\bfseries,%
     identifierstyle=,%
     commentstyle=\color{darkgreen},%\itshape,%
-    stringstyle=\color{black}%
+    stringstyle=\color{black},%
+    breaklines=true,%
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}
 }
-\lstloadlanguages{C,C++,Java,Matlab,Mathematica}
+\lstloadlanguages{C,C++,Java,Matlab,python,Mathematica}
+
+%    \end{macrocode}
+% \subsection{Report on Use of AI Settings}
+%    \begin{macrocode}
+
+\def\AIcite{\@newl@bel b}
+\let\citation\@gobble
+\DeclareRobustCommand\AIcite{%
+  \@ifnextchar [{\@tempswatrue\@AIcitex}{\@tempswafalse\@AIcitex[]}}
+\def\@AIcitex[#1]#2{\leavevmode
+  \let\@AIcitea\@empty
+  \@AIcite{\@for\@AIciteb:=#2\do
+    {\@AIcitea\def\@AIcitea{,\penalty\@m\ }%
+     \edef\@AIciteb{\expandafter\@firstofone\@AIciteb\@empty}%
+     \if@filesw\immediate\write\@auxout{\string\citation{\@AIciteb}}\fi
+     \@ifundefined{b@\@AIciteb}{\hbox{\reset@font\bfseries ?}%
+       \G@refundefinedtrue
+       \@latex@warning
+         {Citation `\@AIciteb' on page \thepage \space undefined}}%
+       {\@AIcite@ofmt{\csname b@\@AIciteb\endcsname}}}}{#1}}
+\def\@AIcite#1#2{[AI: {#1\if@tempswa , #2\fi}]}
+\let\@AIcite@ofmt\hbox
+
+\def\reportname{Report on Use of AI}
+
+\providecommand\@AIlabel[1]{#1.~}
+
+\newenvironment{ReportAiUse}[1]
+     {\centerline{\underline{\large\sffamily\bfseries\reportname}}%
+     \vspace*{-.2em}
+      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      \list{\@AIlabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@AIlabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\def\AImatter{\label{LastPage}\clearpage\pagestyle{aimain}}
 %    \end{macrocode}
 %    \begin{macrocode}
 %</class>
@@ -1089,47 +1151,21 @@ xelatex mcmthesis-demo.tex
 % \iffalse
 %<*demo>
 %!TEX program = pdflatex|xelatex
-%%
-%% This is file `mcmthesis-demo.tex',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% mcmthesis.dtx  (with options: `demo')
-%%
-%% -----------------------------------
-%%
-%% This is a generated file.
-%%
-%% Copyright (C)
-%%       2010 -- 2015 by latexstudio
-%%       2014 -- 2019 by Liam Huang
-%%       2019 -- present by latexstudio.net
-%%
-%% This work may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 1.3
-%% of this license or (at your option) any later version.
-%% The latest version of this license is in
-%%   http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX
-%% version 2005/12/01 or later.
-%%
-%% This work has the LPPL maintenance status `maintained'.
-%%
-%% The Current Maintainer of this work is latexstudio.net.
-%%
+%% !Mode:: "TeX:UTF-8"
 \documentclass{mcmthesis}
  %\documentclass[CTeX = true]{mcmthesis}  % 当使用 CTeX 套装时请注释上一行使用该行的设置
-\mcmsetup{
-        tcn = 0000, problem = A,
-        sheet = true, titleinsheet = true, keywordsinsheet = true,
+\mcmsetup{tstyle=\color{red}\bfseries,%修改题号，队号的颜色和加粗显示，黑色可以修改为 black
+        tcn = 0000, problem = A, %修改队号，参赛题号
+        sheet = true, titleinsheet = true, keywordsinsheet = true, 
         titlepage = false, abstract = true}
 
- %三款字体可以选择
-\usepackage{times}
- %\usepackage{newtxtext}
- %\usepackage{palatino}
+  %四款字体可以选择
+  %\usepackage{times}
+  %\usepackage{newtxtext}
+  %\usepackage{palatino}
+ \usepackage{txfonts}
 
+\usepackage{indentfirst}  %首行缩进，注释掉，首行就不再缩进。
 \usepackage{lipsum}
 \title{The \LaTeX{} Template for MCM Version \MCMversion}
 \author{\small \href{https://www.latexstudio.net/}
@@ -1137,7 +1173,7 @@ xelatex mcmthesis-demo.tex
 \date{\today}
 \begin{document}
 \begin{abstract}
-Use this template to begin typing the first page (summary page) of your electronic report. This template uses a 12-point Times New Roman font. Submit your paper as an Adobe PDF electronic file (e.g. 1111111.pdf), typed in English, with a readable font of at least 12-point type.
+\par Use this template to begin typing the first page (summary page) of your electronic report. This template uses a 12-point Times New Roman font. Submit your paper as an Adobe PDF electronic file (e.g. 1111111.pdf), typed in English, with a readable font of at least 12-point type.
 
 Do not include the name of your school, advisor, or team members on this or any page.
 
@@ -1154,15 +1190,15 @@ keyword1; keyword2
 \end{abstract}
 \maketitle
 %% Generate the Table of Contents, if it's needed.
-%% \tableofcontents
-%% \newpage
+\tableofcontents
+\newpage
 %%
 %% Generate the Memorandum, if it's needed.
 %% \memoto{\LaTeX{}studio}
 %% \memofrom{Liam Huang}
 %% \memosubject{Happy \TeX{}ing!}
 %% \memodate{\today}
-%% \logo{\LARGE I'm pretending to be a LOGO!}
+%% \memologo{\LARGE I'm pretending to be a LOGO!}
 %% \begin{memo}[Memorandum]
 %%   \lipsum[1-3]
 %% \end{memo}
@@ -1180,6 +1216,10 @@ structures, repetitive formatting, or notations like
 mathematics. Install the software from
 \url{www.tug.org/texlive/}.
 \subsection{Creating and typesetting your document}
+
+Follow our WeChat official account for more LaTeX materials and information.
+
+\centerline{\includegraphics[width=5cm]{qrcodewechat}}
 
 \subsection{Syntax (how to type \LaTeX\ commands --- these
   are the rules)}
@@ -1247,8 +1287,7 @@ a^2 \label{aa}
 
 \[
   \arcsin \theta  =
-  \mathop{{\int\!\!\!\!\!\int\!\!\!\!\!\int}\mkern-31.2mu
-  \bigodot}\limits_\varphi
+  \mathop{{\int\!\!\!\!\!\int\!\!\!\!\!\int}} \limits_\varphi
   {\mathop {\lim }\limits_{x \to \infty } \frac{{n!}}{{r!\left( {n - r}
   \right)!}}} \eqno (1)
 \]
@@ -1283,8 +1322,13 @@ boarding time.We also know that all the service is automate.
 \item \textbf{Improve the quality of the airport service}\\
 Balancing the cost of the cost and the benefit, it will bring in
 more convenient  for airport and passengers.It also saves many
-human resources for the airline. \item \textbf{}
+human resources for the airline. 
 \end{itemize}
+
+\subsection{How to cite?}
+bibliography cite use \cite{1,2,3} 
+
+AI cite use \AIcite{AI1,AI2,AI3}
 
 \begin{thebibliography}{99}
 \bibitem{1} D.~E. KNUTH   The \TeX{}book  the American
@@ -1325,6 +1369,72 @@ some more text \textcolor[rgb]{0.98,0.00,0.00}{\textbf{Input C++ source:}}
 \lstinputlisting[language=C++]{./code/mcmthesis-sudoku.cpp}
 
 \end{appendices}
+
+%\label{LastPage} % put the label at end of paper
+
+\AImatter
+
+\begin{ReportAiUse}{9}
+\bibitem{AI1}
+Bing AI\\
+Query1: write a sort algorithm\\
+Output: Sure, I can help you with that. Here is a simple implementation of the selection sort algorithm in Python:
+% Python
+\begin{lstlisting}[language=python]
+def selection_sort(arr):
+    for i in range(len(arr)):
+        min_idx = i
+        for j in range(i + 1, len(arr)):
+            if arr[min_idx] > arr[j]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+\end{lstlisting}
+% AI-generated code. Review and use carefully. More info on FAQ.
+This algorithm sorts an array by repeatedly finding the minimum element from the unsorted part of the array and putting it at the beginning. \href{https://www.geeksforgeeks.org/sorting-algorithms/}{The time complexity of this algorithm is O($n^2$)}.
+
+There are many other sorting algorithms available such as bubble sort, insertion sort, merge sort, quick sort, heap sort, and more. Each of these algorithms has its own advantages and disadvantages. You can learn more about them on GeeksforGeeks and Programiz.
+
+I hope this helps!
+
+\bibitem{AI2}
+OpenAl Enie (Nov 5, 2023 version, Ernie 4.0)\\
+Query1: <insert the exact wording of any subsequent input into the Al tool>\\
+Output: <insert the complete output from the second query>
+
+\bibitem{AI3}
+Github CoPilot (Feb 3, 2024 version)\\
+Query1: <insert the exact wording you input into the Al tool>\\
+Output: <insert the complete output fron the Al tool>
+
+\bibitem{AI4}
+Google Bard (Feb 2,2024 version)\\
+Query: <insert the exact wording of your query>\\
+Output: <irsert the complete output from the Al tool>
+
+\bibitem{AI5}
+Bing AI\\
+Query: write a FFT algorithm\\
+Output: Sure, here is a Python implementation of the Fast Fourier Transform (FFT) algorithm:
+\begin{lstlisting}[language=python]
+import numpy as np
+
+def fft(x):
+    n = len(x)
+    if n == 1:
+        return x
+    even = fft(x[0::2])
+    odd = fft(x[1::2])
+    T = [np.exp(-2j * np.pi * k / n) * odd[k] for k in range(n // 2)]
+    return [even[k] + T[k] for k in range(n // 2)] + [even[k] - T[k] for k in range(n // 2)]
+\end{lstlisting}
+% AI-generated code. Review and use carefully. More info on FAQ.
+The FFT is a widely used algorithm for computing the \textbf{Discrete Fourier Transform (DFT)} of a sequence. It reduces the number of computations needed from O(n$^2$) to O(n log n) 12. The basic idea of the FFT is to apply divide and conquer. We divide the coefficient vector of the polynomial into two vectors, recursively compute the DFT for each of them, and combine the results to compute the DFT of the complete polynomial 3.
+
+I hope this helps!
+
+\end{ReportAiUse}
+
 \end{document}
 %</demo>
 %<*readme>
