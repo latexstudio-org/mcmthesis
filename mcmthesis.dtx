@@ -5,16 +5,8 @@
 %     2014 -- 2019 by Liam Huang
 %     2019 -- present by latexstudio.net
 % -----------------------------------
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License, either version 1.3
-% of this license or (at your option) any later version.
-% The latest version of this license is in
-%   http://www.latex-project.org/lppl.txt
-% and version 1.3 or later is part of all distributions of LaTeX
-% version 2005/12/01 or later.
-%
-% This work has the LPPL maintenance status `maintained'.
-%
+%License: The LaTeX Project Public License 1.3c
+% 
 % The Current Maintainer of this work is LaTeXStudio.
 %
 %<*internal>
@@ -28,7 +20,7 @@
 \keepsilent
 \askforoverwritefalse
 \preamble
-
+!Mode:: "TeX:UTF-8"
 -----------------------------------
 This is a generated file.
 
@@ -36,13 +28,7 @@ Copyright (C) 2010 -- 2015 by latexstudio
       2014 -- 2019 by Liam Huang
       2019 -- present by latexstudio.net
 
-This work may be distributed and/or modified under the
-conditions of the LaTeX Project Public License, either version 1.3
-of this license or (at your option) any later version.
-The latest version of this license is in
-  http://www.latex-project.org/lppl.txt
-and version 1.3 or later is part of all distributions of LaTeX
-version 2005/12/01 or later.
+License: The LaTeX Project Public License 1.3c
 
 The Current Maintainer of this work is latexstudio.net.
 
@@ -704,7 +690,7 @@ xelatex mcmthesis-demo.tex
 %
 % Loading document class.
 %    \begin{macrocode}
-\LoadClass[letterpaper, 12pt]{article}
+\LoadClass[12pt]{article}
 %    \end{macrocode}
 %
 % User interface.
@@ -768,7 +754,7 @@ xelatex mcmthesis-demo.tex
 % \subsection{Page Layout}
 % Setting paper size and margin sep.
 %    \begin{macrocode}
-\geometry{letterpaper, margin = 1in}
+\geometry{headheight=15pt,margin = 1in}
 %    \end{macrocode}
 %
 % Making the footer and header.
@@ -844,7 +830,7 @@ xelatex mcmthesis-demo.tex
   \makesheet
   \fi
   \newpage
-  \setcounter{page}{1}
+  %\setcounter{page}{1}
   \pagestyle{fancy}
   \ifMCM@opt@titlepage
     \MCM@maketitle
@@ -858,21 +844,16 @@ xelatex mcmthesis-demo.tex
 \def\abstractname{Summary}
 \ifMCM@opt@CTeX
   \newbox\@abstract%
-  \setbox\@abstract\hbox{}%
-  \long\def\abstract{\bgroup\global\setbox\@abstract\vbox\bgroup\hsize\textwidth\leftskip1cm\rightskip1cm}%
+  \setbox\@abstract\hbox{}%  \long\def\abstract{\bgroup\global\setbox\@abstract\vbox\bgroup\hsize\textwidth\leftskip1cm\rightskip1cm}%
   \def\endabstract{\egroup\egroup}%
   \def\make@abstract{%
-    \begin{center}%
-      \textbf{\abstractname}%
-    \end{center}%
+      \centerline{\textbf{\abstractname}}%
     \usebox\@abstract\par
   }
 \else
   \RenewEnviron{abstract}{\xdef\@abstract{\expandonce\BODY}}
-  \def\make@abstract{%
-    \begin{center}%
-      \textbf{\abstractname}%
-    \end{center}%
+  \def\make@abstract{% 
+     \centerline{\textbf{\abstractname}} % 
     \@abstract\par
   }
 \fi
@@ -923,21 +904,21 @@ xelatex mcmthesis-demo.tex
   \begin{center}
   \begingroup
   \setlength{\parindent}{0pt}
-     \begin{minipage}[t]{0.33\linewidth}
+     \begin{minipage}[t]{0.3\linewidth}
       \centering%
       \textbf{Problem Chosen}\\[0.7pc]
       {\Large \MCM@opt@tstyle {\MCM@opt@problem}}\\[2.8pc]
      \end{minipage}%
-     \begin{minipage}[t]{0.33\linewidth}
+     \begin{minipage}[t]{0.3\linewidth}
       \centering%
       \textbf{\headset}%
      \end{minipage}%
-     \begin{minipage}[t]{0.33\linewidth}
+     \begin{minipage}[t]{0.3\linewidth}
       \centering%
       \textbf{Team Control Number}\\[0.7pc]
       {\Large\MCM@opt@tstyle{\MCM@opt@tcn}}\\[2.8pc]
      \end{minipage}\par
-  \rule{\linewidth}{1.5pt} 
+  \rule{\linewidth}{0.5pt} 
   \endgroup
   \vskip 5pt%
   \ifMCM@opt@titleinsheet
@@ -1151,19 +1132,18 @@ xelatex mcmthesis-demo.tex
 % \iffalse
 %<*demo>
 %!TEX program = pdflatex|xelatex
-%% !Mode:: "TeX:UTF-8"
 \documentclass{mcmthesis}
  %\documentclass[CTeX = true]{mcmthesis}  % 当使用 CTeX 套装时请注释上一行使用该行的设置
 \mcmsetup{tstyle=\color{red}\bfseries,%修改题号，队号的颜色和加粗显示，黑色可以修改为 black
         tcn = 0000, problem = A, %修改队号，参赛题号
-        sheet = true, titleinsheet = true, keywordsinsheet = true, 
+        sheet = true, titleinsheet = false, keywordsinsheet = true, 
         titlepage = false, abstract = true}
 
   %四款字体可以选择
   %\usepackage{times}
-  %\usepackage{newtxtext}
+  \usepackage{newtxtext,newtxmath} %CTeX 无此字体，可用 txfonts 替代，请使用新版 TeXLive.
   %\usepackage{palatino}
- \usepackage{txfonts}
+  %\usepackage{txfonts}
 
 \usepackage{indentfirst}  %首行缩进，注释掉，首行就不再缩进。
 \usepackage{lipsum}
@@ -1173,16 +1153,18 @@ xelatex mcmthesis-demo.tex
 \date{\today}
 \begin{document}
 \begin{abstract}
-\par Use this template to begin typing the first page (summary page) of your electronic report. This template uses a 12-point Times New Roman font. Submit your paper as an Adobe PDF electronic file (e.g. 1111111.pdf), typed in English, with a readable font of at least 12-point type.
+\par Use this template to begin typing the first page (summary page) of your electronic report. This 
+template uses a 12-point Times New Roman font. Submit your paper as an Adobe PDF 
+electronic file (e.g. 1111111.pdf), typed in English, with a readable font of at least 12-point type.	
 
-Do not include the name of your school, advisor, or team members on this or any page.
+Do not include the name of your school, advisor, or team members on this or any page.	
 
-Papers must be within the 25 page limit.
+Be sure to change the control number and problem choice above.	
 
-Be sure to change the control number and problem choice above.
-You may delete these instructions as you begin to type your report here. 
+You may delete these instructions as you begin to type your report here. 	
 
-Follow us @COMAPMath on Twitter or COMAPCHINAOFFICIAL on Weibo for the most up to date contest information.
+\textbf{Follow us @COMAPMath on Twitter or COMAPCHINAOFFICIAL on Weibo for the 
+most up to date contest information.}
 
 \begin{keywords}
 keyword1; keyword2
